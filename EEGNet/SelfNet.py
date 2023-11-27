@@ -39,9 +39,7 @@ class SelfNet(nn.Module):
         x = self.relu4(x)
         x = x.view(x.size(0), -1)
         x = self.fc(x)
-        return x
-
-
+        return F.softmax(x, dim=1)
 
 # class SelfNet(nn.Module):
 #
